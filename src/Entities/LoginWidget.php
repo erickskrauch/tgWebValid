@@ -3,9 +3,9 @@
 namespace TgWebValid\Entities;
 
 use Carbon\CarbonInterface;
-use TgWebValid\Make\LoginWidget as MakeLoginWidget;
+use TgWebValid\Make\Make;
 
-final class LoginWidget extends MakeLoginWidget
+final class LoginWidget extends Make
 {
     /**
      * A unique identifier for the user or bot.
