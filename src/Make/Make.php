@@ -2,6 +2,9 @@
 
 namespace TgWebValid\Make;
 
+use Carbon\Carbon;
+use ReflectionNamedType;
+use ReflectionProperty;
 use TgWebValid\Support\Arrayable;
 
 abstract class Make extends Arrayable
@@ -12,15 +15,34 @@ abstract class Make extends Arrayable
     public function __construct(array $props = [])
     {
         foreach ($props as $prop => $value) {
+            $value = match ($prop) {
+                'auth_date' => Carbon::createFromTimestamp((int) $value),
+                default     => $value
+            };
             $this->setProperty(camelize($prop), $value);
         }
     }
 
     protected function setProperty(string $property, mixed $value): void
     {
-        if (property_exists(get_class($this), $property)) {
-            $this->$property = $value;
+        if(!property_exists(get_class($this), $property)) {
+            return;
         }
+
+        $reflection = new ReflectionProperty(get_class($this), $property);
+
+        $type = $reflection->getType();
+
+        if(!($type instanceof ReflectionNamedType) || $type->isBuiltin()) {
+            $this->$property = $value;
+            return;
+        }
+
+        $class = $type->getName();
+
+        $this->$property = is_subclass_of($class, self::class)
+            ? new $class($this->tryParseJSON($value))
+            : $value;
     }
 
     /**

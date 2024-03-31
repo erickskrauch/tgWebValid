@@ -6,9 +6,9 @@ use Carbon\CarbonInterface;
 use TgWebValid\Entities\InitData\Chat;
 use TgWebValid\Entities\InitData\Receiver;
 use TgWebValid\Entities\InitData\User;
-use TgWebValid\Make\InitData as MakeInitData;
+use TgWebValid\Make\Make;
 
-final class InitData extends MakeInitData
+final class InitData extends Make
 {
     /**
      * Optional. A unique identifier for the Web App session, required for sending messages via the answerWebAppQuery method.
