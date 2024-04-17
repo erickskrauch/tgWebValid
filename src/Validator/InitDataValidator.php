@@ -33,15 +33,9 @@ final class InitDataValidator extends Validator
      */
     public function parse(string $data): array
     {
-        $rawData = explode('&', rawurldecode($data));
+        parse_str($data, $result);
 
-        return array_merge(...array_map(
-            function($item) {
-                if(strpos($item, '=') === false) return [];
-                [$prop, $value] = explode('=', $item);
-                return [$prop => $value];
-            },
-            $rawData
-        ));
+        /** @var array<string, int|string|bool> $result */
+        return $result = array_filter($result , 'is_string', ARRAY_FILTER_USE_KEY);
     }
 }
