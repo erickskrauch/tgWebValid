@@ -7,6 +7,9 @@ use TgWebValid\Exceptions\ValidationException;
 
 final class InitDataValidator extends Validator
 {
+    /**
+     * @throws ValidationException If the validation fails and receiving exceptions is enabled in the settings
+     */
     public function validate(string $data): InitData|false
     {
         $rawData = $this->parse($data);

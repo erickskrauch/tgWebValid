@@ -9,6 +9,7 @@ final class LoginWidgetValidator extends Validator
 {
     /**
      * @param array<string, int|string|bool> $data
+     * @throws ValidationException If the validation fails and receiving exceptions is enabled in the settings
      */
     public function validate(array $data): LoginWidget|false
     {
