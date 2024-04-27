@@ -4,6 +4,9 @@
     "description": "An easy way to validate Telegram Login Widget and Telegram Mini App users on your website using PHP",
     "keywords": [
         "telegram",
+        "telegram-login",
+        "telegram-login-widget",
+        "telegram-mini-app",
         "authentication",
         "authorization",
         "login",
