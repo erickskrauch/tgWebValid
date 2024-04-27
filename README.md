@@ -11,6 +11,16 @@
 [![StandWithUkraine](./StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
 ## About TgWebValid
+
+They say we are cool 😎
+
+⭐️ Support us, give us a star on GitHub and become our sponsor 😊
+
+🙏 Please let us know on GitHub if something isn't working for you
+or if you need additional functionality
+
+<hr />
+
 User authentication occurs by encrypting the received, raw, user data and comparing it with the hash provided by the telegram. A failed check can be equated with a possible attempt to bypass or hack the system.
 
 The library verifies users Telegram Login Widget and Telegram Web App
