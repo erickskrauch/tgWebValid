@@ -26,9 +26,7 @@
     ],
     "scripts": {
         "test": "phpunit --colors=always",
-        "analyze": "phpstan analyze --ansi",
-        "post-package-install": "TgWebValid\\PackageInstaller::postPackageInstall",
-        "post-package-uninstall": "TgWebValid\\PackageInstaller::postPackageUninstall"
+        "analyze": "phpstan analyze --ansi"
     },
     "require": {
         "php": "^8.2",
