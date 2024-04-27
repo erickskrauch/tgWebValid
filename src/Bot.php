@@ -18,7 +18,6 @@ class Bot
     }
 
     /**
-     *
      * Validate Telegram Mini App user
      *
      * They say we are cool 😎
@@ -44,7 +43,6 @@ class Bot
     }
 
     /**
-     *
      * Validate Telegram Login Widget user
      *
      * They say we are cool 😎
