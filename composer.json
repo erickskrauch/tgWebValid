@@ -32,7 +32,7 @@
         "analyze": "phpstan analyze --ansi"
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8.1",
         "nesbot/carbon": "^2.67|^3.2"
     },
     "require-dev": {
